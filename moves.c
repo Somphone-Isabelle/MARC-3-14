@@ -153,3 +153,19 @@ void updateLocalisation(t_localisation *p_loc, t_move m)
     *p_loc = move(*p_loc, m);
     return;
 }
+
+void ChooseRandMove(t_move moves[], int nb_moves) {
+    int list_moves[7] = {22, 15, 7, 7, 21, 21, 7};
+    int moves_done = 0;
+
+    srand(time(NULL));
+
+    while (moves_done < nb_moves) {
+        int i = rand() % 7; //i = index of the move
+        if (list_moves[i] > 0) {
+            moves[moves_done] = i;
+            moves_done++;
+            list_moves[i]--;
+        }
+    }
+}

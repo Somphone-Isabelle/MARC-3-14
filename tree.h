@@ -1,26 +1,33 @@
 //
-// Created by Isa 2.0 on 20/10/2024.
+// Created by Isa 2.0 on 11/11/2024.
 //
 
 #ifndef TREE_H
 #define TREE_H
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "loc.h"
 #include "moves.h"
 #include "map.h"
-#include "queue.h"
-#include "stack.h"
 
-typedef struct s_node {
+typedef struct s_tree {
     t_localisation loc;
     t_move move;
     int cost;
-    struct s_node *children[5];
-} t_node;
+    struct s_tree *children[9];
+    int nb_children;
+    struct s_tree *parent;
+} t_tree;
 
-t_node* buildTree(t_localisation loc, int depth, t_map map, int num_moves);
-t_node* findMinValLeaf(t_node* root);
-void PathRootLeaf(t_node* root, t_node* leaf);
+t_tree *tree_node(t_localisation , int, t_move, t_tree*); //root node
 
+void buildMovementTree(t_tree* , t_map*, int); //all possible sequences from the root + each node = state of MARC after sequence of moves
+t_tree *OptimalLeaf(t_tree*);
+void moves_sequence(t_tree *, t_move sequence[], int *);
+void freeTree(t_tree*);
+
+//void display_tree(t_tree);
 #endif //TREE_H
+
+
+
+

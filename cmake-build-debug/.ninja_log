@@ -6,3 +6,7 @@
 23	139	7512252578851076	CMakeFiles/untitled1.dir/queue.c.obj	c91cc51665d00f73
 29	148	7512252578916881	CMakeFiles/untitled1.dir/stack.c.obj	2cf31185ecc3aa58
 18	174	7512252578802325	CMakeFiles/untitled1.dir/map.c.obj	68f044f9fe967d87
+8	256	7531297819895891	CMakeFiles/untitled1.dir/main.c.obj	614c57f990ddf6c2
+18	262	7531297820001506	CMakeFiles/untitled1.dir/moves.c.obj	17d89aca056f7de5
+26	267	7531297820081546	CMakeFiles/untitled1.dir/tree.c.obj	2936bf2ee691dc56
+268	828	7531297822489330	untitled1.exe	cb967e9c2386d6f6
