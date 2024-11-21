@@ -1,12 +1,16 @@
 # ninja log v6
-8	106	7512252578703944	CMakeFiles/untitled1.dir/loc.c.obj	269393a4ce90394a
-3	124	7512252578655480	CMakeFiles/untitled1.dir/main.c.obj	614c57f990ddf6c2
-13	130	7512252578747538	CMakeFiles/untitled1.dir/moves.c.obj	17d89aca056f7de5
-174	267	7512252580368312	untitled1.exe	c0a08a069124116c
-23	139	7512252578851076	CMakeFiles/untitled1.dir/queue.c.obj	c91cc51665d00f73
-29	148	7512252578916881	CMakeFiles/untitled1.dir/stack.c.obj	2cf31185ecc3aa58
-18	174	7512252578802325	CMakeFiles/untitled1.dir/map.c.obj	68f044f9fe967d87
-8	256	7531297819895891	CMakeFiles/untitled1.dir/main.c.obj	614c57f990ddf6c2
-18	262	7531297820001506	CMakeFiles/untitled1.dir/moves.c.obj	17d89aca056f7de5
-26	267	7531297820081546	CMakeFiles/untitled1.dir/tree.c.obj	2936bf2ee691dc56
-268	828	7531297822489330	untitled1.exe	cb967e9c2386d6f6
+4	72	7538238444637386	CMakeFiles/untitled1.dir/loc.c.obj	269393a4ce90394a
+5	123	7539284243893001	CMakeFiles/untitled1.dir/main.c.obj	614c57f990ddf6c2
+4	133	7539263871099393	CMakeFiles/untitled1.dir/rover.c.obj	af0034f35169d3c5
+19	150	7538819640070818	CMakeFiles/untitled1.dir/moves.c.obj	17d89aca056f7de5
+123	228	7539284245072339	untitled1.exe	2582e42dd2fb0727
+29	164	7538819640167918	CMakeFiles/untitled1.dir/tree.c.obj	2936bf2ee691dc56
+45	301	7534937910144924	CMakeFiles/untitled1.dir/queue.c.obj	c91cc51665d00f73
+24	108	7538380307104610	CMakeFiles/untitled1.dir/stack.c.obj	2cf31185ecc3aa58
+23	178	7538819640120085	CMakeFiles/untitled1.dir/map.c.obj	68f044f9fe967d87
+3	639	7539296362824804	build.ninja	fedd227f4822e43d
+30	353	7539236640971269	CMakeFiles/untitled1.dir/tree1.c.obj	cdfb6e1a904be322
+2	261	7539296362824804	build.ninja	fedd227f4822e43d
+5	131	7539296363318164	CMakeFiles/untitled1.dir/main.c.obj	614c57f990ddf6c2
+11	158	7539296363378674	CMakeFiles/untitled1.dir/rover.c.obj	af0034f35169d3c5
+158	318	7539296364851672	untitled1.exe	20410a323f946a10

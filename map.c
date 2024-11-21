@@ -301,3 +301,104 @@ void displayMap(t_map map)
     }
     return;
 }
+
+void displayMap2(t_map map, t_localisation rover)
+{
+    /** the rules for display are :
+     * display all soils with 3x3 characters
+     * characters are : B for base station, '-' for plain, '~' for erg, '^' for reg, ' ' for crevasse
+     */
+    int rx = rover.pos.x - 1;
+    int ry = rover.pos.y - 1;
+    for (int i = 0; i < map.y_max; i++)
+      {
+        for (int rep = 0; rep < 3; rep++)
+        {
+            for (int j = 0; j < map.x_max; j++)
+            {
+                char c[4];
+                if (rx == j && ry == i) {
+                    if (rep == 0)  {
+                        if (rover.ori == NORTH) {
+                            strcpy(c, " * ");
+                        } else {
+                            strcpy(c, "   ");
+                        }
+                    } else if ((rep == 1)) {
+                        if (rover.ori == WEST) {
+                            strcpy(c, " R*");
+                        } else if (rover.ori == EAST) {
+                            strcpy(c, "*R ");
+                        } else {
+                            strcpy(c, " R ");
+                        }
+                    } else if ((rep == 2)) {
+                        if (rover.ori == SOUTH) {
+                            strcpy(c, " * ");
+                        } else {
+                            strcpy(c, "   ");
+                        }
+                    }
+                } else {
+                switch (map.soils[i][j])
+                {
+                    case BASE_STATION:
+                        if (rep==1)
+                        {
+                            strcpy(c, " B ");
+                        }
+                        else
+                        {
+                            strcpy(c, "   ");
+                        }
+                        break;
+                    case PLAIN:
+                        strcpy(c, "---");
+                        break;
+                    case ERG:
+                        strcpy(c, "~~~");
+                        break;
+                    case REG:
+                        strcpy(c, "^^^");
+                        break;
+                    case CREVASSE:
+                        sprintf(c, "%c%c%c",219,219,219);
+                        break;
+                    default:
+                        strcpy(c, "???");
+                        break;
+                }
+
+                }
+
+                printf("%s", c);
+            }
+            printf("\n");
+        }
+    }
+    return;
+}
+
+void displayDefaultInfo(t_localisation rover, t_map map) {
+    if (1 == 1) {
+        printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
+        for (int i = 0; i < map.y_max; i++)
+        {
+            for (int j = 0; j < map.x_max; j++)
+            {
+                printf("%d ", map.soils[i][j]);
+            }
+            printf("\n");
+        }
+        // printf the costs, aligned left 5 digits
+        for (int i = 0; i < map.y_max; i++)
+        {
+            for (int j = 0; j < map.x_max; j++)
+            {
+                printf("%-5d ", map.costs[i][j]);
+            }
+            printf("\n");
+        }
+        displayMap2(map, rover);
+    }
+}

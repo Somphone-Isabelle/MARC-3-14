@@ -45,7 +45,7 @@ void push(t_stack *p_stack, int value)
 int pop(t_stack *p_stack)
 {
     // the stack must not be empty
-    assert(p_stack->nbElts > 0);
+    //assert(p_stack->nbElts > 0);
     p_stack->nbElts--;
     return p_stack->values[p_stack->nbElts];
 }

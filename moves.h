@@ -8,7 +8,7 @@
 #include "loc.h"
 #include <time.h>
 #include <stdlib.h>
-
+#include "map.h"
 /**
  * @brief Array of strings for the possible moves of the robot
  */
@@ -64,6 +64,9 @@ void updateLocalisation(t_localisation *, t_move);
  * @return number of moves selected
  */
 
-void ChooseRandMove(t_move moves[], int nb_moves);
+t_move *getRandomMoves(int);
+
+int checkMove(t_localisation loc, t_move move, t_map *map, int *new_cost);
+
 
 #endif //UNTITLED1_MOVES_H
