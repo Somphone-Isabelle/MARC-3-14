@@ -7,6 +7,7 @@
 #include "queue.h"
 #include "stack.h"
 #include "rover.h"
+#include "timer.h"
 
 void print_menu() {
     printf("\nMenu:\n");
@@ -132,7 +133,10 @@ int main() {
                 roverDisplayMap(map, rover);
                 break;
             case 3:
+                startTimer();
                 best = roverRunPhase(rover, map, moves);
+                stopTimer();
+                displayTime();
                 break;
             case 4:
                 if (best != NULL) {

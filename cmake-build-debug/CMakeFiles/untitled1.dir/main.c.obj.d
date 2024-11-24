@@ -33,4 +33,5 @@ CMakeFiles/untitled1.dir/main.c.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/x86_64-w64-mingw32/include/pthread_time.h \
  C:\Users\jessi\OneDrive\Bureau\MARC-3-14\queue.h \
  C:\Users\jessi\OneDrive\Bureau\MARC-3-14\stack.h \
- C:\Users\jessi\OneDrive\Bureau\MARC-3-14\rover.h
+ C:\Users\jessi\OneDrive\Bureau\MARC-3-14\rover.h \
+ C:\Users\jessi\OneDrive\Bureau\MARC-3-14\timer.h

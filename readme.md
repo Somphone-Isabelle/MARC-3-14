@@ -31,3 +31,9 @@
 ## Conclusion
     This practical helped us understand how to implement tree structures, understand complexity and how lists can be used in a working environment.
     Thank you for assisting us during this project and we hope you aprreciated it !
+
+## Time complexity
+    For sequence of 5 movements generated from 9 random movements : around 17s
+    For sequence of 5 movements generated from 7 random movements : around 3s
+    For sequence of 3 movements generated from 7 random movements : around 0,3s
+    If we consider "MAX_MOVES" to be n, we would have a complexity of O(n^5) for the roverRunPhase because we test each moves from the random array one by one inside each of the 5 for loops representing the i-th movement (i being the number of movements we have for one sequence)

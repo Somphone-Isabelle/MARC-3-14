@@ -38,7 +38,8 @@ CMakeFiles/untitled1.dir/main.c.obj: C:/Users/jessi/OneDrive/Bureau/MARC-3-14/ma
   C:/Users/jessi/OneDrive/Bureau/MARC-3-14/moves.h \
   C:/Users/jessi/OneDrive/Bureau/MARC-3-14/queue.h \
   C:/Users/jessi/OneDrive/Bureau/MARC-3-14/rover.h \
-  C:/Users/jessi/OneDrive/Bureau/MARC-3-14/stack.h
+  C:/Users/jessi/OneDrive/Bureau/MARC-3-14/stack.h \
+  C:/Users/jessi/OneDrive/Bureau/MARC-3-14/timer.h
 
 CMakeFiles/untitled1.dir/map.c.obj: C:/Users/jessi/OneDrive/Bureau/MARC-3-14/map.c \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/limits.h \
@@ -270,6 +271,8 @@ C:/Users/jessi/OneDrive/Bureau/MARC-3-14/rover.h:
 
 C:/Users/jessi/OneDrive/Bureau/MARC-3-14/stack.h:
 
+C:/Users/jessi/OneDrive/Bureau/MARC-3-14/timer.h:
+
 C:/Users/jessi/OneDrive/Bureau/MARC-3-14/moves.c:
 
 C:/Users/jessi/OneDrive/Bureau/MARC-3-14/queue.c:
@@ -277,5 +280,3 @@ C:/Users/jessi/OneDrive/Bureau/MARC-3-14/queue.c:
 C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/x86_64-w64-mingw32/include/assert.h:
 
 C:/Users/jessi/OneDrive/Bureau/MARC-3-14/rover.c:
-
-C:/Users/jessi/OneDrive/Bureau/MARC-3-14/timer.h:
