@@ -12,7 +12,7 @@ void print_menu() {
     printf("\nMenu:\n");
     printf("1. Initialize the position of the rover\n");
     printf("2. Display the map, the map cost and the position of the rover on the map\n");
-    printf("3. Compute and Show moves tree and best sequence for a phase\n");
+    printf("3. Compute and show moves tree and best sequence for a phase\n");
     printf("4. Move the rover executing the best movements\n");
     printf("5. Move the rover one movement at a time\n");
     printf("6. Draw the 9 moves at random\n");
