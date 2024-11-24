@@ -9,6 +9,33 @@
 #include "rover.h"
 #include "timer.h"
 
+/**
+ * @brief Displays the menu options for the user
+ */
+void print_menu();
+
+/**
+ * @brief : Let the user enters the coordinates of the rover and ensuring that the position is valid within the map and not in the crevasse
+ * @param map : map on which the rover will be placed
+ * @return : the pos after initializing it with the orientation
+ */
+t_localisation rover_pos(t_map map);
+
+/**
+ * @brief Move the rover with the best sequence generated with the tree in case 3
+ * @param rover : current position and orientation of the rover
+ * @param best : pointer to the node representing the best movement sequence
+ * @return
+ */
+t_localisation move_rover(t_localisation rover, t_node *best);
+
+/**
+ * @brief : Allows the user to choose a movement that will move the rover
+ * @param rover : current position and orientation of the rover
+ * @return : updated position and orientation of the rover after the move
+ */
+t_localisation single_move(t_localisation rover);
+
 void print_menu() {
     printf("\nMenu:\n");
     printf("1. Initialize the position of the rover\n");
@@ -16,7 +43,7 @@ void print_menu() {
     printf("3. Compute and show moves tree and best sequence for a phase\n");
     printf("4. Move the rover executing the best movements\n");
     printf("5. Move the rover one movement at a time\n");
-    printf("6. Draw the 9 moves at random\n");
+    printf("6. Draw a set of 9 moves randomly\n");
     printf("9. Exit\n");
     printf("Enter your choice: ");
 }
@@ -108,9 +135,10 @@ t_localisation single_move(t_localisation rover) {
 
 
 int main() {
+    //initialization of our main local variables
     t_node *best = NULL;
     int choice;
-    t_localisation rover = loc_init(10, 10, NORTH);
+    t_localisation rover = loc_init(5, 6, NORTH);
     t_map map;
     t_move *moves = getRandomMoves(9);
     // The following preprocessor directive checks if the code is being compiled on a Windows system.
@@ -130,6 +158,24 @@ int main() {
                 rover = rover_pos(map);
                 break;
             case 2:
+                printf("\n");
+            //printf the map with its dimension
+                printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
+                for (int i = 0; i < map.y_max; i++) {
+                    for (int j = 0; j < map.x_max; j++) {
+                        printf("%d ", map.soils[i][j]);
+                    }
+                    printf("\n");
+                }
+                printf("\n");
+            // printf the costs, aligned left 5 digits
+                for (int i = 0; i < map.y_max; i++) {
+                    for (int j = 0; j < map.x_max; j++) {
+                        printf("%-5d ", map.costs[i][j]);
+                    }
+                    printf("\n");
+                }
+                printf("\n");
                 roverDisplayMap(map, rover);
                 break;
             case 3:
@@ -192,56 +238,3 @@ int main() {
     } while (choice != 9);
     return 0;
 }
-
-/*
-	t_map map;
-	// The following preprocessor directive checks if the code is being compiled on a Windows system.
-	// If either _WIN32 or _WIN64 is defined, it means we are on a Windows platform.
-	// On Windows, file paths use backslashes (\), hence we use the appropriate file path for Windows.
-
-#if defined(_WIN32) || defined(_WIN64)
-	map = createMapFromFile("..\\maps\\example1.map");
-#else
-	map = createMapFromFile("../maps/example1.map");
-#endif
-
-	// set of random moves available
-	t_move *moves = getRandomMoves(9);
-
-	// start localisation
-	t_localisation rover = loc_init(6,5, NORTH);
-	printf("test");
-	roverRunPhase(rover, map, moves);
-	/*rover = move(rover, F_30);
-	rover = move(rover, T_LEFT);
-	rover = move(rover, F_10);
-	rover = move(rover, F_10);
-	rover = move(rover, F_10);*/
-
-/*roverDisplayInfo(rover,map);
-//check base
-int test = roverCost(rover, map);
-if (test == 0);
-
-return 0;
-}*/
-
-/*int choice;
-printf(
-"Enter a movement to do: (0 = F 10m, 1 = F 20m, 2 = F 30m, 3 = B 10m, 4 = T left, 5 = T right, 6 = U-turn): ");
-scanf("%d", &choice);
-switch (choice) {
-case 0: rover = move(rover, F_10);
-case 1: rover = move(rover, F_20);
-break;
-case 2: rover = move(rover, F_30);
-break;
-case 3: rover = move(rover, B_10);
-break;
-case 4: rover = move(rover, T_LEFT);
-break;
-case 5: rover = move(rover, T_RIGHT);
-break;
-case 6: rover = move(rover, U_TURN);
-break;
-}*/

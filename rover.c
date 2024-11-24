@@ -13,8 +13,7 @@ static int MAX_MOVES = 9;
 static int MIN_COST = 10000;
 
 
-//si dans map renvoie cout du rover
-//if test = 0 we are in the map and we return the cost and the coordinates of the map, if return 1we are outside the map
+//if test = 0 we are in the map and we return the cost and the coordinates of the map, if return 1 we are outside the map
 int roverCost(t_localisation loc, t_map map) {
     int test = roverValidLocalisation(loc, map);
     int cost = 9999;
@@ -26,7 +25,7 @@ int roverCost(t_localisation loc, t_map map) {
         }
         return cost;
     }
-    //9999 nous sommes plus dans la map
+    //9999 means that we are out of the map
     return 9999;
 }
 
@@ -34,14 +33,14 @@ int roverCostCheck(int cost) {
     if (MODE_DEBUG == 1) {
         return 0;
     }
-    //si 9999 nous sommes hors de la carte et si 10000 nous sommes dans une crevasse et donc return 0 si cost valide
+    //if 9999 we are out of map and if 10000 we are at a crevasse the return 0 if cost valid
     if (cost < 9000) {
         return 0;
     }
     return 1;
 }
 
-//verifie si loc valide , renvoie 0 si dans la map et sinon 1
+//verify if loc is valid, return 0 if in map else 1
 int roverValidLocalisation(t_localisation loc, t_map map) {
     //printf("roverValidLocalisation %d:%d / %d:%d\n", loc.pos.x, loc.pos.y, map.x_max, map.y_max);
     //fflush(stdout);
@@ -51,12 +50,12 @@ int roverValidLocalisation(t_localisation loc, t_map map) {
     return 1;
 }
 
-//calcul de l'arbre = path de tous les chemins possibles
+//computing of the tree = give the path of all possible paths
 t_node *roverRunPhase(t_localisation rover, t_map map, t_move *moves) {
     int minCost = 10000;
     int cost = 10000;
     int posx, posy;
-    int count = 0; //compteur de noeuds
+    int count = 0; //counter of nodes
 
     t_node *best = malloc(sizeof(t_node));
     t_tree *t1 = malloc(sizeof(t_tree));
@@ -79,6 +78,7 @@ t_node *roverRunPhase(t_localisation rover, t_map map, t_move *moves) {
         if (roverCostCheck(n0->cost) == 0) {
             t_node *n1 = malloc(sizeof(t_node));
             n1->move = moves[i1];
+            //we test the soils, to do : not move if soil = reg (if prev loc = reg)
             n1->loc = move(n0->loc, n1->move);
             n1->cost = roverCost(n1->loc, map);
             n1->level = 1;
@@ -105,6 +105,7 @@ t_node *roverRunPhase(t_localisation rover, t_map map, t_move *moves) {
                 if (i2 != i1 && roverCostCheck(n1->cost) == 0) {
                     t_node *n2 = malloc(sizeof(t_node));
                     n2->move = moves[i2];
+                    //we test the soils, to do : not move if soil = reg (if prev loc = reg)
                     n2->loc = move(n1->loc, n2->move);
                     n2->cost = roverCost(n2->loc, map);
                     n2->level = 2;
@@ -129,6 +130,7 @@ t_node *roverRunPhase(t_localisation rover, t_map map, t_move *moves) {
                         if (i3 != i1 && i3 != i2 && roverCostCheck(n2->cost) == 0) {
                             t_node *n3 = malloc(sizeof(t_node));
                             n3->move = moves[i3];
+                            //we test the soils, to do : not move if soil = reg (if prev loc = reg)
                             n3->loc = move(n2->loc, n3->move);
                             n3->cost = roverCost(n3->loc, map);
                             n3->level = 3;
@@ -224,7 +226,7 @@ t_node *roverRunPhase(t_localisation rover, t_map map, t_move *moves) {
     return best;
 }
 
-//affiche la carte avec le rover
+//printf the map with the rover on it with also the orientation
 void roverDisplayMap(t_map map, t_localisation rover) {
     /** the rules for display are :
      * display all soils with 3x3 characters
@@ -293,7 +295,7 @@ void roverDisplayMap(t_map map, t_localisation rover) {
     return;
 }
 
-//affiche info du rover (map + cost)
+//printf rover's info (map + cost)
 void roverDisplayInfo(t_localisation rover, t_map map) {
     if (roverValidLocalisation(rover, map) == 0) {
         printf("Map created with dimensions %d x %d\n", map.y_max, map.x_max);
