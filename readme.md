@@ -28,6 +28,16 @@
         9.Exit
             This option stops the execution of the program completely, allowing the rover to get a day off.
 
+## Files 
+    stack(.c/.h) - file for creation and modification of stacks 
+    queue(.c/.h) - file for creation and modification of queues
+    loc(.c/.h) - file dedicated to the localisation of the robot through position and orientation
+    map(.c/.h) - file dedicated to the structure and creation of maps
+    moves(.c/.h) - file dedicated to the possible moves available to the rover and the execution of moves
+    timer(.c/.h) - file used to calculate the time of execution of a function
+    main.c - file used to set up user interface
+    rover(.c/.h) - file used to set up the rover's best trajectory to get him to the base station
+
 ## Conclusion
     This practical helped us understand how to implement tree structures, understand complexity and how lists can be used in a working environment.
     Thank you for assisting us during this project and we hope you aprreciated it !
