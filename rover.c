@@ -245,9 +245,9 @@ void roverDisplayMap(t_map map, t_localisation rover) {
                         }
                     } else if ((rep == 1)) {
                         if (rover.ori == WEST) {
-                            strcpy(c, " R*");
-                        } else if (rover.ori == EAST) {
                             strcpy(c, "*R ");
+                        } else if (rover.ori == EAST) {
+                            strcpy(c, " R*");
                         } else {
                             strcpy(c, " R ");
                         }
