@@ -296,6 +296,30 @@ stack.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled1.dir\build.make CMakeFiles/untitled1.dir/stack.c.s
 .PHONY : stack.c.s
 
+timer.obj: timer.c.obj
+.PHONY : timer.obj
+
+# target to build an object file
+timer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled1.dir\build.make CMakeFiles/untitled1.dir/timer.c.obj
+.PHONY : timer.c.obj
+
+timer.i: timer.c.i
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled1.dir\build.make CMakeFiles/untitled1.dir/timer.c.i
+.PHONY : timer.c.i
+
+timer.s: timer.c.s
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled1.dir\build.make CMakeFiles/untitled1.dir/timer.c.s
+.PHONY : timer.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -326,6 +350,9 @@ help:
 	@echo ... stack.obj
 	@echo ... stack.i
 	@echo ... stack.s
+	@echo ... timer.obj
+	@echo ... timer.i
+	@echo ... timer.s
 .PHONY : help
 
 

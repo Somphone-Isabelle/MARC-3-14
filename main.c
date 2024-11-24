@@ -38,4 +38,6 @@ int main() {
 	int test = roverCost(rover, map);
 	if (test == 0);
 	return 0;
+
+    printf("%d",test);
 }

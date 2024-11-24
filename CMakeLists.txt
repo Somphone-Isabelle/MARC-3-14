@@ -17,4 +17,5 @@ add_executable(untitled1 main.c
         rover.c
         rover.c
         rover.h
+        timer.c
 )
